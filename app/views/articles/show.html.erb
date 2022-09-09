@@ -1,2 +1,11 @@
 <h1><%=@article.title%></h1>
 <p><%=@article.body%>
+<ul>
+<%# <li> %>
+    <li><%= link_to "Edit",edit_article_path,class:"btn btn-warning"%></li>
+<li><%=button_to "Destroy", article_path(@article),method: :delete,form:{data:{
+        turbo_confirm: "Are you sure?"
+    }},class:"btn btn-danger"%></li>
+
+<%# </li> %>
+</ul>
